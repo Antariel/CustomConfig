@@ -1,0 +1,41 @@
+{	
+	"GameCardId":"LOOT_500",	
+	"ConfigComment":"Val'anyr Settings.",	
+
+	"InHandPlayPriority": 
+    {
+		"values":
+		[
+			{						
+			"comment":"play this card as early as possible.",  		  
+			"condition": "*",
+			"value":"50",
+			}
+		],
+	},
+				
+	"OnBoardBonus":
+	{
+		"values":
+		[
+			{
+			"comment":"Bonus if you have a minion in hand if the weapon has 1 Durability left.",
+			"condition": "my_player(count(), cardid=LOOT_500) > 0 AND my_hand(count(),minion) > 0 AND my_heroweapon(count(), durability > 2) > 0",
+			"value":"100",
+			}
+		],
+	},
+	
+	"BeforeUseHeroPowerBonus":
+	{
+		"values":
+		[
+			{
+				"comment":"Don't use heropower before playing this.",
+				"condition": "*",
+				"value": "-1000",
+			}
+		],
+	}
+	
+}
